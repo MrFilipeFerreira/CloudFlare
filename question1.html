@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Down</title>
+</head>
+<body>
+    <h1>Site down, your name servers are down</h1>
+    <p>Hi [Customer Name],</p>
+    <p>Thank you for reaching out. I understand you're having trouble accessing your website <a href="http://example.com">http://example.com</a> from different networks and are concerned about our name servers' functionality. Let's investigate and resolve this issue promptly.</p>
+    <p>First, I have confirmed that Cloudflare's name servers are functioning correctly. However, there are several potential reasons why you might be experiencing issues:</p>
+    <ol>
+        <li>**DNS Propagation**: If you have recently changed your DNS settings, it may take some time for the changes to propagate globally. This usually takes up to 24-48 hours.</li>
+        <li>**DNS Configuration**: Ensure that your DNS records are correctly configured in the Cloudflare dashboard. Check your A, CNAME, and other relevant records.</li>
+        <li>**Network Issues**: Sometimes, network issues or ISP restrictions can cause access problems. Verify if the issue persists across different networks (e.g., mobile data, different ISPs).</li>
+        <li>**Firewall or Security Settings**: Ensure that any firewall or security settings on your server are not blocking Cloudflare’s IP ranges.</li>
+    </ol>
+    <p>Tools I would use to diagnose the issue:</p>
+    <ul>
+        <li><a href="https://www.whatsmydns.net/">What's My DNS</a> to check DNS propagation.</li>
+        <li><a href="https://mxtoolbox.com/DNSLookup.aspx">MX Toolbox</a> for DNS lookups.</li>
+        <li>Command-line tools like `dig` and `nslookup` to verify DNS records.</li>
+    </ul>
+    <p>Let's start by confirming your current DNS settings and checking if there are any recent changes that could be causing this issue. Please provide the details of any recent changes you have made.</p>
+    <p>Best regards,<br>[Your Name]</p>
+</body>
+</html>

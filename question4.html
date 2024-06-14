@@ -1,0 +1,19 @@
+// pages/question4.js
+export default function Question4() {
+  return (
+    <div>
+      <h1>Cloudflare Nameservers</h1>
+      <p>Hi [Customer Name],</p>
+      <p>Thank you for your question about Cloudflare's nameservers. Here’s how they differ from other DNS providers like Google DNS or OpenDNS and how you can delegate DNS management.</p>
+      <p>**Differences between Cloudflare's nameservers and others**:</p>
+      <ol>
+        <li>**DDoS Protection**: Cloudflare provides built-in DDoS protection, mitigating attacks automatically.</li>
+        <li>**CDN Integration**: Cloudflare integrates DNS with its global content delivery network, optimizing performance by caching content closer to users.</li>
+        <li>**Security Features**: Enhanced security features such as SSL/TLS encryption, DNSSEC, and Web Application Firewall (WAF).</li>
+        <li>**Analytics**: Detailed analytics and logging for DNS queries.</li>
+      </ol>
+      <p>**Delegation and Using Host's DNS**:</p>
+      <p>To delegate DNS to Cloudflare while using your host’s DNS, you can:</p>
+      <ol>
+        <li>**Partial Setup**: Use CNAME records to point to Cloudflare’s proxy, allowing you to keep your current DNS provider while using Cloudflare for CDN and security.</li>
+        <li>**Full Setup**: Switch to Cloudflare’s nameservers completely

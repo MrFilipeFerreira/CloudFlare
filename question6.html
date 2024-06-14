@@ -1,0 +1,43 @@
+// pages/question6.js
+export default function Question6() {
+  return (
+    <div>
+      <h1>Redirection based on user agent</h1>
+      <p>Hi [Customer Name],</p>
+      <p>Thank you for your inquiry. I understand you want to redirect visitors with a specific user agent (e.g., `MSIE 8.0`) to a different page, and this isn't possible with Cloudflare Page Rules. There is indeed an alternative solution using Cloudflare Workers, which allows for more advanced logic, including user agent-based redirection.</p>
+      <p>Here is a sample Worker script to achieve this:</p>
+      <pre>
+      <code>
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
+
+async function handleRequest(request) {
+  const userAgent = request.headers.get('User-Agent') || ''
+  if (userAgent.includes('MSIE 8.0')) {
+    return Response.redirect('https://example.com/legacy-page', 301)
+  }
+  return fetch(request)
+}
+      </code>
+      </pre>
+      <p>Steps to deploy this Worker:</p>
+      <ol>
+        <li>Go to the Cloudflare dashboard and select your site.</li>
+        <li>Navigate to the "Workers" tab.</li>
+        <li>Click "Create a Worker" and paste the above script into the editor.</li>
+        <li>Save and deploy the Worker.</li>
+        <li>Assign the Worker to the desired route (e.g., `*example.com/*`).</li>
+      </ol>
+      <p>This script checks the `User-Agent` header of incoming requests and redirects users with `MSIE 8.0` to a specified legacy page. For other user agents, the request proceeds as normal.</p>
+      <p>Tools I would use to implement and test this:</p>
+      <ul>
+        <li>**Cloudflare Workers Dashboard** for creating and deploying the Worker.</li>
+        <li>**Browser DevTools** to simulate different user agents and test the redirection.</li>
+        <li>Command-line tools like `curl` to send requests with specific user agents and verify the response.</li>
+      </ul>
+      <p>Please try implementing this Worker and let me know if you encounter any issues or need further assistance.</p>
+      <p>Best regards,<br>[Your Name]</p>
+    </div>
+  );
+}

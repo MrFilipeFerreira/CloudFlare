@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workers Not Applied</title>
+</head>
+<body>
+    <h1>Workers not applied</h1>
+    <p>Hi [Customer Name],</p>
+    <p>Thank you for reaching out. I understand you have added a Worker on the Cloudflare Dashboard for your website, and it works in the debugger but not when you query the site. Let's troubleshoot this issue together.</p>
+    <p>Here are some potential reasons why the Worker might not be applied:</p>
+    <ol>
+        <li>**Route Mismatch**: Ensure that the Worker is assigned to the correct route in the Cloudflare dashboard. Verify that the route pattern matches your URL correctly.</li>
+        <li>**Caching**: Cached content might be served instead of running the Worker. Try purging the Cloudflare cache to see if that resolves the issue.</li>
+        <li>**Plan Limitations**: Some Cloudflare plans have limitations on the number of Workers or specific features. Ensure your plan supports the Worker configuration you are trying to use.</li>
+    </ol>
+    <p>Tools I would use to diagnose the issue:</p>
+    <ul>
+        <li>Cloudflare’s **Workers Dashboard** to check the Worker routes and logs.</li>
+        <li>**Purge Cache** option in the Cloudflare Dashboard to ensure no cached content is interfering.</li>
+        <li>Browser DevTools to inspect network requests and responses.</li>
+    </ul>
+    <p>Please

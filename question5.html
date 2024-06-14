@@ -1,0 +1,37 @@
+// pages/question5.js
+export default function Question5() {
+  return (
+    <div>
+      <h1>Content not Being Cached</h1>
+      <p>Hi [Customer Name],</p>
+      <p>Thank you for reaching out. I understand that after activating Cloudflare on your site, the resources on your pages are not being cached. Let's investigate this issue together.</p>
+      <p>From the `curl` response you provided, it appears that the `Cache-Control` header is set to `no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0`. These headers instruct browsers and intermediary caches (like Cloudflare) not to cache the content. Here are some steps to address this:</p>
+      <ol>
+        <li>**Update Cache-Control Headers**: Ensure that your server is sending the correct `Cache-Control` headers for the resources you want to be cached. For example:
+          <pre>
+          Cache-Control: public, max-age=86400
+          </pre>
+          This header tells Cloudflare and browsers to cache the resource for 24 hours.
+        </li>
+        <li>**Page Rules**: Use Cloudflare Page Rules to set caching policies. In your Cloudflare dashboard:
+          <ol>
+            <li>Go to the "Page Rules" tab.</li>
+            <li>Click on "Create Page Rule".</li>
+            <li>Enter the URL pattern for the resources you want to cache (e.g., `*example.com/*`).</li>
+            <li>Set "Cache Level" to "Cache Everything" and adjust the "Edge Cache TTL" to your desired duration.</li>
+          </ol>
+        </li>
+        <li>**Check Caching Status**: Use tools like `curl` with the `-I` option to check HTTP headers or visit the resource in a browser and inspect the response headers to ensure that caching is working as expected.
+        </li>
+      </ol>
+      <p>Tools I would use to diagnose the issue:</p>
+      <ul>
+        <li><a href="https://www.webpagetest.org/">WebPageTest</a> to analyze the caching behavior.</li>
+        <li><a href="https://developers.google.com/web/tools/chrome-devtools/network">Chrome DevTools</a> to inspect HTTP headers and verify caching.</li>
+        <li>Command-line tools like `curl` to check HTTP headers.</li>
+      </ul>
+      <p>Please review these steps and make the necessary adjustments to your server's caching headers and Cloudflare settings. Let me know if you need further assistance.</p>
+      <p>Best regards,<br>[Your Name]</p>
+    </div>
+  );
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Location</title>
+</head>
+<body>
+    <h1>Why is my site coming from California?</h1>
+    <p>Hi [Customer Name],</p>
+    <p>Thank you for your message. I understand you're seeing your website served from California despite being in London. Let's clarify how Cloudflare's CDN works and address your concern.</p>
+    <p>Cloudflare uses a global network of data centers to cache and deliver content as close to your visitors as possible. However, several factors might cause your site to appear as if it's being served from a specific location like California:</p>
+    <ol>
+        <li>**Caching Location**: Cloudflare may serve content from a different data center if the closest one is under heavy load or undergoing maintenance to ensure the best performance.</li>
+        <li>**Initial Request Routing**: Sometimes, the initial DNS resolution might route through a data center that is not geographically closest due to routing policies or peering agreements.</li>
+        <li>**Geo-Targeting**: Verify if any geo-targeting or IP-specific rules are set up that might affect how the site is being served.</li>
+    </ol>
+    <p>Tools I would use to diagnose the issue:</p>
+    <ul>
+        <li><a href="https://www.dnsleaktest.com/">DNS Leak Test</a> to check the routing path.</li>
+        <li>Cloudflare’s Analytics Dashboard to see where the traffic is being served from.</li>
+    </ul>
+    <p>Please provide more details or screenshots if you can. This will help us understand the exact issue and ensure that your website is served from the optimal location for your users.</p>
+    <p>Best regards,<br>[Your Name]</p>
+</body>
+</html>
